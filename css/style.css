@@ -514,3 +514,83 @@ span {
     margin-top: 2rem;
   }
 }
+
+.tech-icons {
+  margin-top: 1rem;
+}
+
+.tech-icons-container {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tech-icon-item {
+  /* Nuevo contenedor para cada icono y su tooltip */
+  position: relative; /* Necesario para posicionar el tooltip */
+  display: inline-block; /* Permite que los elementos se coloquen uno al lado del otro */
+}
+
+.tech-icon-item img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.tech-icon-item:hover img {
+  transform: scale(1.2) rotate(-2deg);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Estilos para el tooltip personalizado */
+.tooltip-text {
+  visibility: hidden; /* Oculto por defecto */
+  opacity: 0; /* Oculto por defecto */
+  width: auto; /* Ancho automático según el contenido */
+  background-color: var(--second-bg-color); /* Color de fondo del tooltip */
+  color: var(--text-color); /* Color del texto */
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  position: absolute;
+  z-index: 1; /* Asegura que esté por encima de otros elementos */
+  bottom: 120%; /* Posiciona el tooltip encima de la imagen */
+  left: 50%;
+  transform: translateX(-50%); /* Centra el tooltip horizontalmente */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Transición suave */
+  font-size: 1.2rem;
+  white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+}
+
+.tech-icon-item:hover .tooltip-text {
+  visibility: visible; /* Muestra el tooltip al pasar el ratón */
+  opacity: 1; /* Muestra el tooltip al pasar el ratón */
+}
+
+/* Colores individuales (aplicados a la imagen dentro del nuevo contenedor) */
+.tech-icon-item img[alt="Kotlin"] {
+  background-color: #7f52ff;
+}
+
+.tech-icon-item img[alt="Jetpack Compose"] {
+  background-color: #4285f4;
+}
+
+.tech-icon-item img[alt="Firebase"] {
+  background-color: #dd2c00;
+}
+
+.tech-icon-item img[alt="Github"] {
+  background-color: #393737;
+}
+
+.tech-icon-item img[alt="Material Design"] {
+  background-color: #6200ee;
+}
+
+.tech-icon-item img[alt="Android Studio"] {
+  background-color: #3ddc84;
+}
